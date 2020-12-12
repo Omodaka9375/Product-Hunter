@@ -1,9 +1,12 @@
 # Product-Hunter
 Self-hosted, one-page pitcher for your MVP idea
 
+
 As seen on https://producthunter.biz/
 
+
 ![Screenshot](screenshot.png)
+
 
 ### Motivation
 - We all need startup idea validator.
@@ -25,4 +28,7 @@ When you click 'Do it now' button onthe page, you can start changing the texts a
 Click again and you will be prompted to save the edited page to your computer
 Note that refreshing the page will reset all changes made. If you dont want to save the changes just click no when the dialog prompts you. 
 
+
 Inspired by <a href="https://andybrewer.github.io/mvp/?ref=producthunt">MVP.css</a> and <a href="https://github.com/chr15m/slingcode">Slingcode Editor</a>
+
+Product Hunter is open-source under MIT licence, feel free to fork, discuss and improve further. 
