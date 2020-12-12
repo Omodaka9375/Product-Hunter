@@ -11,10 +11,11 @@ As seen on https://producthunter.biz/
 ### Motivation
 - We all need startup idea validator.
 - No more stacked drawer full of untested ideas and MVPs!
-- 
+- Don't lose time on frameworks, databases and hosting setup.
 - Do people really think you have a good idea? If so will they sign up on your mailing list?
 - Don't re-invent the wheel, find your niche customers first.
-- Test your idea before going out!
+- Test your idea before going out.
+- Fail fast!
 
 
 ### Setup
