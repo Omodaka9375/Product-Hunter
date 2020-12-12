@@ -14,31 +14,28 @@
       gtag('js', new Date());
       gtag('config', 'G-VCY1GY1W45');
     </script>
-  	<script async src="https://flywidgets.com/app/pixel/<YOUR-PIXIE-LINK>"></script>
+  	<script async src="https://flywidgets.com/app/pixel/0f3a7fb73444844c042eee157cfcdc55"></script>
     <script>
-      function save(filename)
-      {
-         var text = document.querySelector("html").innerHTML;
-         var element = document.createElement('a');
-         element.setAttribute('href', 'data:html/plain;charset=utf-8,' + 
-         encodeURIComponent(text));
-         element.setAttribute('download', filename);
-         element.style.display = 'none';
-         document.body.appendChild(element);
-         element.click();
-         document.body.removeChild(element);
-      }
-      function edit(mode){
+      function edit_save(){
+        var mode = document.designMode == 'on' ? 'off':'on';
 		if (mode == 'on'){
-        	//find button change color and text
+          document.designMode = 'on';
           document.getElementById("editbttn").style.background="#ff0000";
           document.getElementById("editbttn").innerHTML="<b>Live Editing &rarr;</b>";
         }
         else {
-        // revert style changes and text user finished editing save the file
-          document.getElementById("editbttn").style.background="#118bee0b";
-          document.getElementById("editbttn").innerHTML="<b>Do it now &rarr;</b>";
-          save('YourMVP.html');
+		 document.designMode = 'off';         
+         document.getElementById("editbttn").style.background="#118bee0b";
+         document.getElementById("editbttn").innerHTML="<b>Do it now &rarr;</b>";
+         var text = document.querySelector("html").innerHTML;
+         var element = document.createElement('a');
+         element.setAttribute('href', 'data:html/plain;charset=utf-8,' + 
+         encodeURIComponent(text));
+         element.setAttribute('download', 'YourMVPpage.html');
+         element.style.display = 'none';
+         document.body.appendChild(element);
+         element.click();
+         document.body.removeChild(element);
         }
       }
   	</script>
@@ -76,11 +73,6 @@
       z-index: 99; 
       font-size: 50px;    
     }
-    #pp{
-      display: inline-block;
-      text-align:center;
-      width: 100%;
-	}
     #top {
     padding-bottom:0;
     }
@@ -101,7 +93,7 @@
         <h1><big>Product <u>Hunter</u></big></h1>
       <p><big>Self-hosted, one-page pitcher for your <mark>MVP</mark> idea</big></p>
         <br>
-        <p><a href="#how"><i>Find out more</i></a><a id="editbttn" href="#" onclick="document.designMode = document.designMode == 'on' ? 'off':'on'; edit(document.designMode)">
+        <p><a href="#how"><i>Find out more</i></a><a id="editbttn" href="#" onclick="edit_save()">
 <b>Do it now &rarr;</b></a></p>
     </header>
     <main>
@@ -115,55 +107,55 @@
             <img alt="Stock photo" src="https://andybrewer.github.io/mvp/img/stock.jpg">
             <figcaption style="text-align: center;"><i>Succeed or fail ... quickly</i></figcaption>
         </figure>
-    <br>
+         <br>
               <article id="what">
              <header>
                <h2>Features</h2>
-                <p><big>Startup idea validator</big></p>
+                <p>Startup idea validator</p>
             </header>
             <ul>
-              <li><big><b>Product Hunter is <i>fast</i> and only 12Kb in size!</b></big></li>
-                <li><big><b>Host it anywhere, it's all just static HTML, CSS and client-side Javascript</b></big></li>
-                <li><big><b>Product Hunter is itself MVP template that you can edit right now, and make it your own</b></big></li>
-                <li><big><b>Attract and take note of potential future customers with email subscriptions and Google Analytics integrated</b></big></li>
-                <li><big><b>Pitch you idea to masses in no time</b></big></li>
+              <li><big>Product Hunter is <i>fast</i> and only 12 Kb in size!</big></li>
+                <li><big>Host it anywhere, it's just a static HTML page</big></li>
+                <li><big>Product Hunter is itself MVP template that you can edit right now, and make it your own</big></li>
+                <li><big>Attract and take note of potential future customers with email subscription and Google Analytics integrated</big></li>
+                <li><big>Pitch you idea to masses in no time</big></li>
             </ul>
         </article>
       <hr>
         <article id="why">
              <header>
                <h2>Not All Heroes Wear Capes</h2>
-                <p><big>Who is this for anyway?</big></p>
+                <p>Who is this for anyway?</p>
             </header>
             <ul>
-                <li><big><b>Professional procrasinators</b></big></li>
-                <li><big><b>Creative busybodies</b></big></li>
-                <li><big><b>YOU!</b></big></li>
-                <li><big><b>Pretty much anyone with a business idea</b></big></li>
+                <li><big>Professional procrasinators</big></li>
+                <li><big>Creative busybodies</big></li>
+                <li><big>YOU!</big></li>
+                <li><big>Pretty much anyone with a business idea ...</big></li>
             </ul>
         </article>
       <hr>
         <section>
             <header id="how">
                 <h2>Launch your MVP, now!</h2>
-                <p><big>What you need to know</big></p>
+                <p>What you need to know</p>
             </header>
             <aside>
               <img src="https://github.com/encharm/Font-Awesome-SVG-PNG/blob/master/white/png/128/html5.png?raw=true"/>
-                <h3>Quick and dirty</h3>
+                <h3><mark>Quick and dirty</mark></h3>
                 <p>Click on <u>Do it now</u> button at the top, to start editing this page to your likings. Save it and you're done!</p>
               <p><small>* you can check out <a href="https://www.w3schools.com/TAGS/ref_byfunc.asp" target="_blank">HTML guide</a></small></p>
             </aside>
             <aside>
               <img src="https://github.com/encharm/Font-Awesome-SVG-PNG/blob/master/white/png/128/mobile-phone.png?raw=true"/>
-                <h3>Mobile-friendly UI</h3>
+                <h3><mark>Mobile-friendly UI</mark></h3>
                 <p>Don't worry about details! <i>Product Hunter</i> is using MVP.css for clean, reusable design together with <code>designMode</code> attribute.</p>
               	<p><small>* check out <a href="https://andybrewer.github.io/mvp/?ref=producthunt" target="_blank">MVP.css</a> for more details</small></p>
             </aside>
             <aside>
                 <img src="https://github.com/encharm/Font-Awesome-SVG-PNG/blob/master/white/png/128/dollar.png?raw=true"/>
-                <h3>MIT Licence</h3>
-              <p>Product Hunter is open-source. As seen on my Github <a href="https://github.com/Omodaka9375?tab=repositories" target="_blank">repo</a>.</p>
+                <h3><mark>MIT Licence</mark></h3>
+              <p>Product Hunter is open-source. As seen on my Github <a href="https://github.com/Omodaka9375/Product-Hunter" target="_blank">repo</a>.</p>
               <p>It's <mark>FREE</mark>.</p>
             </aside>
         </section>
@@ -173,22 +165,22 @@
                <h2><aside>How to start</aside></h2>
             </header>
              <details>
-                <summary><big>PLAN your IDEA ahead</big></summary>
-                <p><big>Get a nice domain for your MVP website.
+                <summary><b>PLAN your IDEA ahead of time</b></summary>
+                <p>Get a nice domain for your MVP website.
 Prepare images or photos, short texts and one-liners explaining your idea. 
 Why it's unique, and what problem does it solve.
-When ready click on <u>Do it now</u> button.</big></p>
+When ready click on <u>Do it now</u> button.</p>
             </details>
              <details>
-                <summary><big>Make it come to life</big></summary>
-				<p><big>Design page according to your likings, by live editing this very page you are looking at.
+                <summary><b>Make it come to life</b></summary>
+				<p>Design page according to your likings, by live editing this very page you are looking at.
 You can edit the style also easily, by changing the :root style element at the top of your HTML page source.
-Once satisfied save your page. It's now ready for uploading anywhere on the internet! No database required!</big></p>
+Once satisfied save your page. It's now ready for uploading anywhere on the internet! No database required!</p>
                </details>
                <details>
-                <summary><big>Catch the audience</big></summary>
-               <p><big>If someone likes the idea and would like to see it happen, he can signup via email to get notified when the idea gets out. If your MVP gets enough traction and people signup in masses ... 
-                 Then you know what to do next! Build it!</big></p>
+                <summary><b>Catch the audience</b></summary>
+               <p>If someone likes the idea and would like to see it happen, he can signup via email to get notified when the idea gets out. If your MVP gets enough traction and people signup in masses ... 
+                 Then you know what to do next! Build it!</p>
                </details>
         </article>
       <br>
@@ -196,7 +188,7 @@ Once satisfied save your page. It's now ready for uploading anywhere on the inte
              <header>
                <h2><aside>Customizing the looks</aside></h2>
             </header>
-        <big> You can further customise the MVP template by changing <code>style tag</code> in the exported HTML file:</big>
+        <p> You can further customize the MVP template by changing <code>style</code>  tag in the exported HTML file:</p>
 		<pre><code>
 :root {
     --border-radius: 2px;
@@ -224,7 +216,7 @@ Once satisfied save your page. It's now ready for uploading anywhere on the inte
      </article>
           <article>
              <header>
-               <h2><aside>Setup email subscription widget</aside></h2>
+               <h2><aside>Email subscription widget</aside></h2>
             </header>
               <ul>
                 <li><big>Go to <a href="https://flywidgets.com">FlyWidgets</a> and create an account (also FREE)</big></li>
@@ -233,7 +225,7 @@ Once satisfied save your page. It's now ready for uploading anywhere on the inte
                 <li><big>Create a campaign, and activate <a href="https://flywidgets.com/widgets/email-subscription/">Collector Bar</a> notification.</big></li>
                 <li><big>Customize the look and feel of your widget</big></li>
                 <li><big>Replace the existing line in your newly created HTML file with the Pixel link</big></li>
-                <li><big>Don't forget to change the BuyMeCoffee donation button in the HTML file!</big></li>
+                <li><big>Don't forget to change the BuyMeACoffee donation button in the HTML file!</big></li>
                 <li><big>Upload it to any host - no database or framework required!</big></li>
             </ul>
      </article>
