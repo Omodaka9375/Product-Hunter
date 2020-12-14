@@ -3,43 +3,59 @@
 <head>
     <link rel="icon" href="https://github.com/encharm/Font-Awesome-SVG-PNG/blob/master/white/png/64/bullseye.png?raw=true">
     <link rel="stylesheet" href="https://unpkg.com/mvp.css">
-  	<link rel="canonical" href="https://producthunter.biz/">
+    <link rel="canonical" href="https://producthunter.biz/">
     <meta charset="utf-8">
     <meta name="description" content="Self hosted, one page pitcher for your MVP idea">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<script async src="https://www.googletagmanager.com/gtag/js?id=G-VCY1GY1W45"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-VCY1GY1W45');
+      gtag('config', 'G-XXXXXXXXXX');
     </script>
-  	<script async src="https://flywidgets.com/app/pixel/0f3a7fb73444844c042eee157cfcdc55"></script>
+	
+  	<script async src="https://flywidgets.com/app/pixel/xxxxxxxxxxxxxxxxxxxx"></script>
     <script>
-      function edit_save(){
+      function edit_save(element){
         var mode = document.designMode == 'on' ? 'off':'on';
-		if (mode == 'on'){
-          document.designMode = 'on';
-          document.getElementById("editbttn").style.background="#ff0000";
-          document.getElementById("editbttn").innerHTML="<b>Live Editing &rarr;</b>";
+	if ( mode == 'on'){
+            document.designMode = 'on';
+            document.getElementById("editbttn").style.background="#ff0000";
+          	document.getElementById("editbttn").innerHTML="<b>Live Editing &rarr;</b>";
+      		var elems = document.body.getElementsByTagName("*");
+      		for(var i = 0;  i< elems.length; i++){
+            	elems[i].style.outlineColor = "#5F5F5F";
+                elems[i].style.outlineStyle = "dotted";
+            }
+        } else {
+	 		document.designMode = 'off';         
+            document.getElementById("editbttn").style.background="#118bee0b";
+            document.getElementById("editbttn").innerHTML="<b>Do it now &rarr;</b>";
+          	var elems = document.body.getElementsByTagName("*"); 
+          	for(var i = 0;  i< elems.length; i++){
+                elems[i].style.outlineColor = null;
+               	elems[i].style.outlineStyle = null;
+            }
+         var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+         if (isChrome){
+            document.location = 'data:html/plain;charset=utf-8,'+encodeURIComponent('<!doctype html>' + document.documentElement.outerHTML);
+         } else {
+            var text = document.querySelector("html").innerHTML;
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:html/plain;charset=utf-8,' + 
+            encodeURIComponent(text));
+            element.setAttribute('download', 'YourMVPpage.html');
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+    	}
         }
-        else {
-		 document.designMode = 'off';         
-         document.getElementById("editbttn").style.background="#118bee0b";
-         document.getElementById("editbttn").innerHTML="<b>Do it now &rarr;</b>";
-         var text = document.querySelector("html").innerHTML;
-         var element = document.createElement('a');
-         element.setAttribute('href', 'data:html/plain;charset=utf-8,' + 
-         encodeURIComponent(text));
-         element.setAttribute('download', 'YourMVPpage.html');
-         element.style.display = 'none';
-         document.body.appendChild(element);
-         element.click();
-         document.body.removeChild(element);
-        }
-      }
-  	</script>
-	<style>
+    }
+    </script>
+    <style>
       :root {
     --border-radius: 2px;
     --box-shadow: 2px 2px 10px;
@@ -61,7 +77,7 @@
     --width-card-medium: 460px;
     --width-card-wide: 800px;
     --width-content: 1080px;
-	}
+    }
     form {
       border: 0px;
       box-shadow: none;
@@ -70,30 +86,32 @@
       position: fixed;
       bottom: 20px; 
       right: 30px; 
-      z-index: 99; 
+      z-index: 9999999999; 
       font-size: 50px;    
     }
     #top {
     padding-bottom:0;
     }
-  	</style>
+  </style>
     <title>Product Hunter</title>
 </head>
 <body>
     <a href="#top" id="anchor">^</a>
     <header id="top">
         <nav>
-            <a href="/"><img alt="Logo" src="https://github.com/encharm/Font-Awesome-SVG-PNG/blob/master/white/png/256/bullseye.png?raw=true" height="70"></a>
+            <a href="index.html"><img alt="Logo" src="https://github.com/encharm/Font-Awesome-SVG-PNG/blob/master/white/png/256/bullseye.png?raw=true" height="70"></a>
             <ul>
                 <li><a href="#what"><big>What</big></a></li>
                 <li><a href="#why"><big>Why</big></a></li>
                 <li><a href="#how"><big>How</big></a></li>
+				<li><a href="light.html"><img src="https://github.com/encharm/Font-Awesome-SVG-PNG/blob/master/white/png/32/sun-o.png?raw=1" style="margin-top:0px;margin-bottom:0px;"/></a></li>
+
             </ul>
         </nav>
         <h1><big>Product <u>Hunter</u></big></h1>
       <p><big>Self-hosted, one-page pitcher for your <mark>MVP</mark> idea</big></p>
         <br>
-        <p><a href="#how"><i>Find out more</i></a><a id="editbttn" href="#" onclick="edit_save()">
+        <p><a href="#how"><i>Find out more</i></a><a id="editbttn" href="#" onclick="edit_save(this,event)">
 <b>Do it now &rarr;</b></a></p>
     </header>
     <main>
@@ -108,7 +126,20 @@
             <figcaption style="text-align: center;"><i>Succeed or fail ... quickly</i></figcaption>
         </figure>
          <br>
-              <article id="what">
+             <article id="what">
+             <header>
+               <h2>Motivation</h2>
+            </header>
+            <ul>
+                <li><big>No more stacked drawers full of questionable ideas and unfinished projects.</big></li>
+                <li><big>Don't have time for frameworks, databases and hosting setups?</big></li>
+                <li><big>Do people really think you have a good idea? If so will they sign up on your mailing list?</big></li>
+                <li><big>Don't re-invent the wheel, find your niche customers first.</big></li>
+                <li><big>Test your idea before going out!</big></li>
+            </ul>
+        </article>
+      <hr>
+              <article>
              <header>
                <h2>Features</h2>
                 <p>Startup idea validator</p>
@@ -118,7 +149,7 @@
                 <li><big>Host it anywhere, it's just a static HTML page</big></li>
                 <li><big>Product Hunter is itself MVP template that you can edit right now, and make it your own</big></li>
                 <li><big>Attract and take note of potential future customers with email subscription and Google Analytics integrated</big></li>
-                <li><big>Pitch you idea to masses in no time</big></li>
+                <li><big>Pitch your idea to masses in no time</big></li>
             </ul>
         </article>
       <hr>
@@ -137,12 +168,12 @@
       <hr>
         <section>
             <header id="how">
-                <h2>Launch your MVP, now!</h2>
+                <h2>Launch your MVP proposal, now!</h2>
                 <p>What you need to know</p>
             </header>
             <aside>
               <img src="https://github.com/encharm/Font-Awesome-SVG-PNG/blob/master/white/png/128/html5.png?raw=true"/>
-                <h3><mark>Quick and dirty</mark></h3>
+                <h3><mark>Quick and easy</mark></h3>
                 <p>Click on <u>Do it now</u> button at the top, to start editing this page to your likings. Save it and you're done!</p>
               <p><small>* you can check out <a href="https://www.w3schools.com/TAGS/ref_byfunc.asp" target="_blank">HTML guide</a></small></p>
             </aside>
@@ -159,25 +190,26 @@
               <p>It's <mark>FREE</mark>.</p>
             </aside>
         </section>
+      <p style="text-align:center;"><small>* if you are using Chrome, rename your file to eg. <code>index.html</code> after the download.</small></p>
         <hr>
         <article>
              <header>
                <h2><aside>How to start</aside></h2>
             </header>
-             <details>
+             <details open>
                 <summary><b>PLAN your IDEA ahead of time</b></summary>
                 <p>Get a nice domain for your MVP website.
 Prepare images or photos, short texts and one-liners explaining your idea. 
 Why it's unique, and what problem does it solve.
 When ready click on <u>Do it now</u> button.</p>
             </details>
-             <details>
+             <details open>
                 <summary><b>Make it come to life</b></summary>
-				<p>Design page according to your likings, by live editing this very page you are looking at.
+	       <p>Design page according to your likings, by live editing this very page you are looking at.
 You can edit the style also easily, by changing the :root style element at the top of your HTML page source.
 Once satisfied save your page. It's now ready for uploading anywhere on the internet! No database required!</p>
                </details>
-               <details>
+               <details open>
                 <summary><b>Catch the audience</b></summary>
                <p>If someone likes the idea and would like to see it happen, he can signup via email to get notified when the idea gets out. If your MVP gets enough traction and people signup in masses ... 
                  Then you know what to do next! Build it!</p>
@@ -189,7 +221,7 @@ Once satisfied save your page. It's now ready for uploading anywhere on the inte
                <h2><aside>Customizing the looks</aside></h2>
             </header>
         <p> You can further customize the MVP template by changing <code>style</code>  tag in the exported HTML file:</p>
-		<pre><code>
+	<pre><code>
 :root {
     --border-radius: 2px;
     --box-shadow: 2px 2px 10px;
@@ -221,7 +253,7 @@ Once satisfied save your page. It's now ready for uploading anywhere on the inte
               <ul>
                 <li><big>Go to <a href="https://flywidgets.com">FlyWidgets</a> and create an account (also FREE)</big></li>
                 <li><big>Add your DOMAIN on FlyWidget dashboard </big></li>
-                <li><big>Grab the Pixel one-liner looking like this: <code>https://flywidgets.com/app/pixel/0f3a7fXXXXXXXXXXXX</code></big></li>
+                <li><big>Grab the Pixel one-liner looking like this: <code>https://flywidgets.com/app/pixel/XXXXXXXXXXXXXXX</code></big></li>
                 <li><big>Create a campaign, and activate <a href="https://flywidgets.com/widgets/email-subscription/">Collector Bar</a> notification.</big></li>
                 <li><big>Customize the look and feel of your widget</big></li>
                 <li><big>Replace the existing line in your newly created HTML file with the Pixel link</big></li>
@@ -231,7 +263,7 @@ Once satisfied save your page. It's now ready for uploading anywhere on the inte
      </article>
     </main>
     <footer style="text-align:center;">
-		<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="omodaka9375" data-color="#40DCA5" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+   <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="omodaka9375" data-color="#40DCA5" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
       <br>  
       <p>
           <small>Made with 💗 by <a href="https://github.com/Omodaka9375" target="_blank">@Omodaka9375</a> </small>
